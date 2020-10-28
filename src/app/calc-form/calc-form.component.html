@@ -1,0 +1,17 @@
+<div class="calc-form">
+    <div class="row">
+        <input type="text" [(ngModel)]="firstNo" placeholder="Enter 1st No" />
+        <select [(ngModel)]="operation">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+        </select>
+        <input type="text" [(ngModel)]="secondNo" placeholder="Enter 2nd No" />
+    </div>
+    <div class="row">
+        <button type="button" [disabled]="isDisabled" (click)="onCalculate()">Calculate</button>
+    </div>
+    <div class="row">
+        <input type="text" [value]="result" readonly placeholder="The Ans" />
+    </div>
+</div>
