@@ -1,0 +1,9 @@
+<div class="row">
+    <div *ngFor="let todo of todosService.todos">
+        <input type="checkbox" [(ngModel)]="todo.done">{{todo.title | caps}}<i>({{todo.createdDate | date: 'dd-MM-yyyy'}})</i>
+    </div>
+    <div>
+        <button *ngIf="todosService.todos.length" [disabled]="todosMarkedForCompletion == 0" type="button">Finish completed todos</button>
+        <span>({{todosMarkedForCompletion}})</span>
+    </div>
+</div>

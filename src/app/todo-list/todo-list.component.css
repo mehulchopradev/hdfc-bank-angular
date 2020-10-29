@@ -1,0 +1,12 @@
+.row {
+    text-align: center;
+    margin: 30px;
+}
+
+.row > input {
+    margin: 20px;
+}
+
+.row > div {
+    margin: 20px;
+}

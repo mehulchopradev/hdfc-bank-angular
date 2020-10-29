@@ -1,5 +1,11 @@
-<app-calc-form (calculated)="onCalculationDone($event)"></app-calc-form>
-<app-calc-results [first]="firstNo"
-                  [second]="secondNo"
-                  [ops]="operation"
-                  [result]="result"></app-calc-results>
+<header>
+    <h2>Welcome to my utility app</h2>
+</header>
+<div class="nav">
+    <a routerLink="calc" href="">Calculator</a>|
+    <a routerLink="todos" href="">Todos</a>
+</div>
+<router-outlet></router-outlet>
+<footer>
+    Copyright 2020. All rights reserved
+</footer>
