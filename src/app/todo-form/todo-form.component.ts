@@ -22,9 +22,12 @@ export class TodoFormComponent implements OnInit {
   }
 
   onSave(): void {
-    const newTodo = this.newTodo;
-    this.todosService.addTodo(newTodo);
-    this.newTodo = null;
+    const newTodo = this.newTodo; // sync
+    this.todosService.addTodo(newTodo).subscribe((todo: any) => {
+      if (todo) {
+        this.newTodo = null; // sync
+      }
+    }); // async
   }
 
 }

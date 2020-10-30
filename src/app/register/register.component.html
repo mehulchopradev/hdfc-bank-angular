@@ -1,0 +1,44 @@
+<div>
+    <form [formGroup]="formGroup">
+        <h2>Basic Login information</h2>
+        <div class="row">
+            <input type="text" placeholder="Username" formControlName="username">
+            <div *ngIf="!username.valid && (username.touched || username.dirty)">
+                <div *ngIf="username.errors.required">
+                    Username is required
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <input type="password" placeholder="Password" formControlName="password">
+            <div *ngIf="!password.valid && (password.touched || password.dirty)">
+                <div *ngIf="password.errors.required">
+                    Password is required
+                </div>
+                <div *ngIf="password.errors.minlength">
+                    Password must be min 4
+                </div>
+                <div *ngIf="password.errors.maxlength">
+                    Password must be max 10
+                </div>
+            </div>
+        </div>
+        <h2>Other information</h2>
+        <div class="row">
+            <select formControlName="country">
+                <option>India</option>
+                <option>USA</option>
+                <option>France</option>
+            </select>
+        </div>
+        <div class="row">
+            <input type="text" placeholder="State" formControlName="state">
+        </div>
+        <div class="row">
+            <input type="text" placeholder="Pincode" formControlName="pincode">
+        </div>
+        <div class="row">
+            <button [disabled]="formGroup.invalid" type="button" (click)="onSave()">Save</button>
+        </div>
+    </form>
+</div>
